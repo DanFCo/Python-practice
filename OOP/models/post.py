@@ -8,8 +8,7 @@ class Post(object):
     #     self.content = "this is some content"
     #     self.author = "Jose"
 
-
-    def __init__(self, blog_id title, content, author, date, id):
+    def __init__(self, blog_id, title, content, author, date, id):
         self.blog_id = blog_id
         self.title = title
         self.content = content
@@ -18,18 +17,18 @@ class Post(object):
         self.id = id
 
 #-----------VVV This inserts it into our database VVV-----------------
+
     def save_to_mongo(self):
         Database.insert(collection='posts',
                         data=self.json())
 #----------------------------------------------------------------------
 
-
-
 # ----VVV--This creates a JSON representation of the post, so we can save it to our database--VVV----
+
     def json(self):
         return{
             'id': self.id,
-            'blog_id': self.author,
+            'author': self.author,
             'content': self.content,
             'title': self.title,
             'created_date': self.created_date

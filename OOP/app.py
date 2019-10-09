@@ -28,7 +28,10 @@
 # ----------------------------------------------------------------
 
 from models.post import Post
+from database import Database
 
-post = Post("Great Gatsby","About Rich people being rich ", "White Guy")
+Database.initialize()
 
-print(post.content)
+post = Post("Great Gatsby","About Rich people being rich ", "White Guy", "3297","3928", 39)
+
+print(post.title)

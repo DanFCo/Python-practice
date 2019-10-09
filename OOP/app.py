@@ -27,7 +27,7 @@
 
 # ----------------------------------------------------------------
 
-from models.post import Post
+from post import Post
 from database import Database
 
 Database.initialize()

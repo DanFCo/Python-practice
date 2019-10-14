@@ -1,4 +1,6 @@
-
+from database import Database
+import datetime
+import uuid
 
 
 class Post(object):
@@ -8,13 +10,13 @@ class Post(object):
     #     self.content = "this is some content"
     #     self.author = "Jose"
 
-    def __init__(self, blog_id, title, content, author, date, id):
+    def __init__(self, blog_id, title, content, author, date=datetime.datetime.utcnow(), id=None):
         self.blog_id = blog_id
         self.title = title
         self.content = content
         self.author = author
         self.created_date = date
-        self.id = id
+        self.id = uuid.uuid4().hex if id is None else id
 
 #-----------VVV This inserts it into our database VVV-----------------
 

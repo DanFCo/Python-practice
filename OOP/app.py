@@ -32,6 +32,9 @@ from database import Database
 
 Database.initialize()
 
-post = Post("Great Gatsby","About Rich people being rich ", "White Guy", "3297","3928", 39)
+post = Post(blog_id='123',
+            title='Another Great Post',
+            content='some content',
+            author='jose')
 
-print(post.title)
+post.save_to_mongo()

@@ -34,3 +34,12 @@ class Post(object):
             'created_date': self.created_date
         }
 #-------^^^^^----^^^^^-------^^^^^^^^---------------
+@staticmethod
+def from_mongo(id):
+    #Post.from_mongo(123)
+    return data = Database.find_one(collection='posts',query={'id':id})
+
+
+@staticmethod
+def from_blog(id):
+    return[post for post in Database.find(collection='posts', query={'blog_id':id})]

@@ -38,3 +38,7 @@ post = Post(blog_id='123',
             author='jose')
 
 post.save_to_mongo()
+
+# post = Post.from_mongo('cdd49fd1597a4fe9a3aa5bc7ffd0b4ff')
+#
+# print(post)

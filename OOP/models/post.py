@@ -39,7 +39,7 @@ class Post(object):
 @staticmethod
 def from_mongo(id):
     #Post.from_mongo(123)
-    return data = Database.find_one(collection='posts',query={'id':id})
+    return Database.find_one(collection='posts',query={'id':id})
 
 
 @staticmethod
